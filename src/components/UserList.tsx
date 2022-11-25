@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App() {
+const UserList = () => {
     return (
         <div>
 
         </div>
     );
-}
+};
 
-export default App;
+export default UserList;
