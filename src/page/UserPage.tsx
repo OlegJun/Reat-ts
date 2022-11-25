@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {IUser} from "../types/types";
 import UserItem from "../components/UserItem";
 import List from "../components/List";
-import axios from "axios/index";
+import axios from "axios";
 
 const UserPage = () => {
     const [users, setUsers] = useState<IUser[]>([])
