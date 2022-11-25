@@ -4,8 +4,9 @@ import axios from "axios";
 import List from "./components/List";
 import TodoItem from "./components/TodoItem";
 import EventsExample from "./components/EventsExample";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import UserPage from "./page/UserPage";
+import TodosPage from "./page/TodosPage";
 
 function App() {
     const [todos, setTodos] = useState<ITodo[]>([])
@@ -24,16 +25,20 @@ function App() {
     }
 
     return (
-        <div>
-            <EventsExample/>
-            <UserPage/>
-            <List
-                items={todos}
-                renderItem={(todo: ITodo) =>
-                    <TodoItem todo={todo} key={todo.id}/>
-                }
-            />
-        </div>
+        <BrowserRouter>
+            <header>
+                <Link to={'/users'}>
+                    Users
+                </Link>
+                <Link to={'/todos'}>
+                    Todos
+                </Link>
+            </header>
+            <Routes>
+                <Route path={'/users'} element={<UserPage/>}/>
+                <Route path={'/todos'} element={<TodosPage/>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
