@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import UserList from "./components/UserList";
 import {IUser} from "./types/types";
 import axios from "axios";
+import List from "./components/List";
+import UserItem from "./components/UserItem";
 
 function App() {
     const [users, setUsers] = useState<IUser[]>([])
@@ -22,6 +24,12 @@ function App() {
     return (
         <div>
             <UserList users={users}/>
+            <List
+                items={users}
+                renderItem={(user: IUser) =>
+                    <UserItem user={user} key={user.id}/>
+                }
+            />
         </div>
     );
 }
