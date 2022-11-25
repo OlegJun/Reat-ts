@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const UserList = () => {
+interface UserListProps {
+
+}
+
+const UserList: FC<UserListProps> = () => {
     return (
         <div>
 
