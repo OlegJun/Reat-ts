@@ -3,6 +3,7 @@ import {ITodo} from "../types/types";
 import TodoItem from "../components/TodoItem";
 import List from "../components/List";
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 const TodosPage:FC = () => {
     const [todos, setTodos] = useState<ITodo[]>([])
