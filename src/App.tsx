@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import UserList from "./components/UserList";
 import {ITodo, IUser} from "./types/types";
 import axios from "axios";
 import List from "./components/List";
 import UserItem from "./components/UserItem";
 import TodoItem from "./components/TodoItem";
+import EventsExample from "./components/EventsExample";
+import {BrowserRouter, Route} from "react-router-dom";
 
 function App() {
     const [users, setUsers] = useState<IUser[]>([])
@@ -35,6 +36,7 @@ function App() {
 
     return (
         <div>
+            <EventsExample/>
             <List
                 items={users}
                 renderItem={(user: IUser) =>
